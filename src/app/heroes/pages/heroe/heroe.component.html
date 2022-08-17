@@ -1,1 +1,17 @@
-<p>heroe works!</p>
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav mode="push">
+    <mat-toolbar>
+      Menu
+      <button (click)="sidenav.toggle()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+  </mat-sidenav>
+
+  <mat-toolbar>
+    <button (click)="sidenav.toggle()" mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+
+</mat-sidenav-container>
