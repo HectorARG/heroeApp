@@ -1,8 +1,9 @@
 <h1>Listado de Heroes</h1>
 <mat-divider></mat-divider>
 <br>
+<div mt-5 fxLayout="row wrap" >
 
-<mat-card mb-3 *ngFor="let heroe of heroes">
+  <mat-card mb-3 *ngFor="let heroe of heroes">
     <mat-card-header>
         <mat-card-title>{{heroe.superhero}}</mat-card-title>
         <mat-card-subtitle>{{heroe.alter_ego}}</mat-card-subtitle>
@@ -17,3 +18,6 @@
         </p>
     </mat-card-content>
 </mat-card>
+
+</div>
+
