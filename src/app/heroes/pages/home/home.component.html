@@ -1,13 +1,26 @@
-<h1>Hola</h1>
-<mat-sidenav-container>
-  <mat-sidenav>
-    <h1>SideNav</h1>
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav mode="push">
+    <mat-toolbar>
+      Menu
+      <button (click)="sidenav.toggle()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a routerLink="./listado"
+        mat-list-item
+        (click)="sidenav.toggle()">
+        <span>Lista Heroes</span>
+      </a>
+    </mat-nav-list>
   </mat-sidenav>
 
   <mat-toolbar>
-    <button mat-button>
-      Menu
+    <button (click)="sidenav.toggle()" mat-icon-button>
+      <mat-icon>menu</mat-icon>
     </button>
   </mat-toolbar>
+
+  <router-outlet></router-outlet>
 
 </mat-sidenav-container>
