@@ -1,26 +1,9 @@
-<mat-sidenav-container fullscreen>
-  <mat-sidenav #sidenav mode="push">
-    <mat-toolbar>
-      Menu
-      <button (click)="sidenav.toggle()" mat-icon-button>
-        <mat-icon>menu</mat-icon>
-      </button>
-    </mat-toolbar>
-    <mat-nav-list>
-      <a routerLink="./listado"
-        mat-list-item
-        (click)="sidenav.toggle()">
-        <span>Lista Heroes</span>
-      </a>
-    </mat-nav-list>
-  </mat-sidenav>
+<mat-grid-list cols="1" *ngIf="!heroe; else divHeroe">
+  <mat-grid-tile>
+    <mat-spinner></mat-spinner>
+  </mat-grid-tile>
+</mat-grid-list>
 
-  <mat-toolbar>
-    <button (click)="sidenav.toggle()" mat-icon-button>
-      <mat-icon>menu</mat-icon>
-    </button>
-  </mat-toolbar>
-
-  <router-outlet></router-outlet>
-
-</mat-sidenav-container>
+<ng-template #divHeroe>
+  {{heroe | json}}
+</ng-template>
