@@ -27,8 +27,7 @@ export class HeroeComponent implements OnInit {
 
     this.activatedRoute.params
       .pipe(
-        switchMap( ({ id }) => this.heroesService.getHeroePorId(id) )
-      )
+        switchMap( ({ id }) => this.heroesService.getHeroePorId(id) ))
       .subscribe( heroe => this.heroe = heroe );
 
   }
