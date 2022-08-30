@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { LogIn } from '../../interfaces/login.interfaces';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -6,11 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent{
 
-  constructor() { }
+  constructor( private router: Router,
+               private loginService: LoginService) { }
 
-  ngOnInit(): void {
+  login(): void {
+    this.loginService.usuarios().subscribe(resp => {
+        console.log(resp);
+        if( resp.id ){
+          this.router.navigate(['./heroes']);
+        }
+    });
   }
 
 }
